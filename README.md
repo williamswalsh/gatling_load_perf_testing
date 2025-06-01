@@ -1,19 +1,16 @@
-Gatling Fundamentals for API Testing
-====================================
+# Gatling Fundamentals for API Testing
 
-```shell
-# Run gatling tool:
-/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=55990:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/legoman/code/gatling/gatling-fundamentals-api-scala/target/test-classes:/Users/legoman/.m2/repository/io/gatling/highcharts/gatling-charts-highcharts/3.8.2/gatling-charts-highcharts-3.8.2.jar:/Users/legoman/.m2/repository/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar:/Users/legoman/.m2/repository/io/gatling/gatling-app/3.8.2/gatling-app-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-core/3.8.2/gatling-core-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-commons/3.8.2/gatling-commons-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-commons-shared/3.8.2/gatling-commons-shared-3.8.2.jar:/Users/legoman/.m2/repository/org/scala-lang/scala-reflect/2.13.8/scala-reflect-2.13.8.jar:/Users/legoman/.m2/repository/io/suzaku/boopickle_2.13/1.3.3/boopickle_2.13-1.3.3.jar:/Users/legoman/.m2/repository/io/gatling/gatling-commons-shared-unstable/3.8.2/gatling-commons-shared-unstable-3.8.2.jar:/Users/legoman/.m2/repository/org/typelevel/spire-macros_2.13/0.17.0/spire-macros_2.13-0.17.0.jar:/Users/legoman/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/legoman/.m2/repository/com/typesafe/scala-logging/scala-logging_2.13/3.9.5/scala-logging_2.13-3.9.5.jar:/Users/legoman/.m2/repository/ch/qos/logback/logback-classic/1.2.11/logback-classic-1.2.11.jar:/Users/legoman/.m2/repository/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11.jar:/Users/legoman/.m2/repository/io/gatling/gatling-jsonpath/3.8.2/gatling-jsonpath-3.8.2.jar:/Users/legoman/.m2/repository/com/typesafe/akka/akka-slf4j_2.13/2.6.19/akka-slf4j_2.13-2.6.19.jar:/Users/legoman/.m2/repository/org/simpleflatmapper/lightning-csv/8.2.3/lightning-csv-8.2.3.jar:/Users/legoman/.m2/repository/org/simpleflatmapper/sfm-util/8.2.3/sfm-util-8.2.3.jar:/Users/legoman/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.9.3/caffeine-2.9.3.jar:/Users/legoman/.m2/repository/org/checkerframework/checker-qual/3.19.0/checker-qual-3.19.0.jar:/Users/legoman/.m2/repository/com/google/errorprone/error_prone_annotations/2.10.0/error_prone_annotations-2.10.0.jar:/Users/legoman/.m2/repository/io/pebbletemplates/pebble/3.1.5/pebble-3.1.5.jar:/Users/legoman/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/legoman/.m2/repository/org/scala-lang/modules/scala-parser-combinators_2.13/2.1.1/scala-parser-combinators_2.13-2.1.1.jar:/Users/legoman/.m2/repository/com/github/scopt/scopt_2.13/3.7.1/scopt_2.13-3.7.1.jar:/Users/legoman/.m2/repository/io/netty/netty-handler/4.1.78.Final/netty-handler-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-resolver/4.1.78.Final/netty-resolver-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.78.Final/netty-transport-native-unix-common-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-classes/2.0.53.Final/netty-tcnative-classes-2.0.53.Final.jar:/Users/legoman/.m2/repository/com/softwaremill/quicklens/quicklens_2.13/1.8.8/quicklens_2.13-1.8.8.jar:/Users/legoman/.m2/repository/net/sf/saxon/Saxon-HE/10.6/Saxon-HE-10.6.jar:/Users/legoman/.m2/repository/org/jodd/jodd-lagarto/6.0.6/jodd-lagarto-6.0.6.jar:/Users/legoman/.m2/repository/org/jodd/jodd-util/6.1.0/jodd-util-6.1.0.jar:/Users/legoman/.m2/repository/io/burt/jmespath-jackson/0.5.1/jmespath-jackson-0.5.1.jar:/Users/legoman/.m2/repository/io/burt/jmespath-core/0.5.1/jmespath-core-0.5.1.jar:/Users/legoman/.m2/repository/io/gatling/gatling-core-java/3.8.2/gatling-core-java-3.8.2.jar:/Users/legoman/.m2/repository/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/Users/legoman/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-http/3.8.2/gatling-http-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-http-client/3.8.2/gatling-http-client-3.8.2.jar:/Users/legoman/.m2/repository/io/netty/netty-handler-proxy/4.1.78.Final/netty-handler-proxy-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-codec-socks/4.1.78.Final/netty-codec-socks-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-resolver-dns/4.1.78.Final/netty-resolver-dns-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-codec-dns/4.1.78.Final/netty-codec-dns-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-codec-http2/4.1.78.Final/netty-codec-http2-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final-linux-x86_64.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final-linux-aarch_64.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final-osx-x86_64.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final-osx-aarch_64.jar:/Users/legoman/.m2/repository/io/netty/netty-tcnative-boringssl-static/2.0.53.Final/netty-tcnative-boringssl-static-2.0.53.Final-windows-x86_64.jar:/Users/legoman/.m2/repository/com/aayushatharva/brotli4j/brotli4j/1.7.1/brotli4j-1.7.1.jar:/Users/legoman/.m2/repository/com/aayushatharva/brotli4j/native-linux-x86_64/1.7.1/native-linux-x86_64-1.7.1.jar:/Users/legoman/.m2/repository/com/aayushatharva/brotli4j/native-linux-aarch64/1.7.1/native-linux-aarch64-1.7.1.jar:/Users/legoman/.m2/repository/com/aayushatharva/brotli4j/native-osx-x86_64/1.7.1/native-osx-x86_64-1.7.1.jar:/Users/legoman/.m2/repository/com/aayushatharva/brotli4j/native-windows-x86_64/1.7.1/native-windows-x86_64-1.7.1.jar:/Users/legoman/.m2/repository/io/gatling/gatling-http-java/3.8.2/gatling-http-java-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-jms/3.8.2/gatling-jms-3.8.2.jar:/Users/legoman/.m2/repository/javax/jms/javax.jms-api/2.0.1/javax.jms-api-2.0.1.jar:/Users/legoman/.m2/repository/com/eatthepath/fast-uuid/0.2.0/fast-uuid-0.2.0.jar:/Users/legoman/.m2/repository/io/gatling/gatling-jms-java/3.8.2/gatling-jms-java-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-mqtt/3.8.2/gatling-mqtt-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-netty-util/3.8.2/gatling-netty-util-3.8.2.jar:/Users/legoman/.m2/repository/io/netty/netty-codec-mqtt/4.1.78.Final/netty-codec-mqtt-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-transport-native-epoll/4.1.78.Final/netty-transport-native-epoll-4.1.78.Final-linux-x86_64.jar:/Users/legoman/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.78.Final/netty-transport-classes-epoll-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-transport-native-epoll/4.1.78.Final/netty-transport-native-epoll-4.1.78.Final-linux-aarch_64.jar:/Users/legoman/.m2/repository/io/gatling/gatling-mqtt-java/3.8.2/gatling-mqtt-java-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-jdbc/3.8.2/gatling-jdbc-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-jdbc-java/3.8.2/gatling-jdbc-java-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-redis/3.8.2/gatling-redis-3.8.2.jar:/Users/legoman/.m2/repository/net/debasishg/redisclient_2.13/3.42/redisclient_2.13-3.42.jar:/Users/legoman/.m2/repository/org/apache/commons/commons-pool2/2.8.0/commons-pool2-2.8.0.jar:/Users/legoman/.m2/repository/io/gatling/gatling-redis-java/3.8.2/gatling-redis-java-3.8.2.jar:/Users/legoman/.m2/repository/io/gatling/gatling-graphite/3.8.2/gatling-graphite-3.8.2.jar:/Users/legoman/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar:/Users/legoman/.m2/repository/io/gatling/gatling-charts/3.8.2/gatling-charts-3.8.2.jar:/Users/legoman/.m2/repository/com/tdunning/t-digest/3.1/t-digest-3.1.jar:/Users/legoman/.m2/repository/io/gatling/gatling-recorder/3.8.2/gatling-recorder-3.8.2.jar:/Users/legoman/.m2/repository/org/scala-lang/modules/scala-swing_2.13/3.0.0/scala-swing_2.13-3.0.0.jar:/Users/legoman/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar:/Users/legoman/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar:/Users/legoman/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar:/Users/legoman/.m2/repository/io/gatling/gatling-recorder-bc-shaded/1.71/gatling-recorder-bc-shaded-1.71.jar:/Users/legoman/.m2/repository/io/netty/netty-codec-http/4.1.78.Final/netty-codec-http-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-common/4.1.78.Final/netty-common-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-buffer/4.1.78.Final/netty-buffer-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-transport/4.1.78.Final/netty-transport-4.1.78.Final.jar:/Users/legoman/.m2/repository/io/netty/netty-codec/4.1.78.Final/netty-codec-4.1.78.Final.jar:/Users/legoman/.m2/repository/com/typesafe/akka/akka-actor_2.13/2.6.19/akka-actor_2.13-2.6.19.jar:/Users/legoman/.m2/repository/com/typesafe/config/1.4.2/config-1.4.2.jar:/Users/legoman/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar:/Users/legoman/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.13.8.jar:/Users/legoman/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.13.8.jar Engine
+```scala
 
 # Run specific simulation in Maven:
 FORMAT: mvn gatling:test -Dgatling.simulationClass=<SIMULATION_CLASS_PATH>
 SAMPLE: mvn gatling:test -Dgatling.simulationClass=ie.williamswalsh.feeders.BasicCustomFeeder
 
 # TODO
-# Try to display data in response time across percentiles graph 
+# Try to display data in response time across percentiles graph
 ```
 
-```Scala
+```scala
 // Demonstrate Open load model vs closed?
 // constantUsersPerSec(10): Sends 10 new users per second, no matter how busy the system is.
 // This avoids coordinated omission, as Gatling continues to inject users based on time, not response times.
@@ -29,4 +26,56 @@ setUp(
     constantUsersPerSec(10).during(30.seconds)
   )
 ).protocols(httpProtocol)
+```
+
+```scala
+// injections
+// injections are not sequential they occur simultaneaously
+
+
+// This will send a total of 500 users through the system over a period of 1800 seconds (or 30 minutes).
+rampUsers(500) over (1800 seconds)
+
+
+
+// for 50 of the 60 seconds do nothing load test is only 10 seconds long
+  setUp(
+    scn.inject(
+      nothingFor(50), // this is not normal
+      atOnceUsers(10),
+      rampUsers(20).during(30)
+    ).protocols(httpProtocol)
+  ).maxDuration(60)
+
+//
+    setUp(
+      scn.inject(
+        nothingFor(5),
+        constantUsersPerSec(10).during(10)
+      ).protocols(httpProtocol)
+    )
+
+  // Fixed duration - 60 secs
+  // 10 users -> 11 -> 30 -> remains at 30 until test ends
+  setUp(
+    scn.inject(
+      nothingFor(5), // for 5 of the 60 seconds do nothing load test is only 55 seconds long
+      atOnceUsers(10), // 10 users per sec plus
+      rampUsers(20).during(30) // 1->20(11->30) users per second with a ramp of 30seconds
+    ).protocols(httpProtocol)
+  ).maxDuration(60)
+
+```
+
+```scala
+
+# inferHtmlResources - Gatling will parse the HTML and automatically generate requests for resources like images, stylesheets, and scripts referenced in the page.
+# BlackList: Excludes resources matching the specified patterns (e.g., ads or .png files).
+# WhiteList: Includes only resources matching the specified patterns (e.g., .css and .js files).
+
+val httpConf = http.baseUrl("https://example.com")
+  .inferHtmlResources(
+    BlackList(".*/ads/.*", ".*\\.png"),
+    WhiteList(".*\\.css", ".*\\.js")
+  )
 ```

@@ -14,7 +14,7 @@ class CsvFeeder extends Simulation {
 
   val csvFeeder = csv("data/game.csv").circular
 
-  def getSpecificVideoGame() = {
+  def getSpecificVideoGame = {
 
 //    Repeat block
     repeat(10) {
